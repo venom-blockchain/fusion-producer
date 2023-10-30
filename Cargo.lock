@@ -980,6 +980,53 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "af2469fab0bd07e64ccf0ad57a1438f63160c69b2e57f04a439653d68eb558d6"
 
 [[package]]
+name = "fusion-producer"
+version = "0.0.1"
+dependencies = [
+ "anyhow",
+ "archive-downloader",
+ "argh",
+ "async-trait",
+ "base64",
+ "broxus-util",
+ "bytes",
+ "bytesize",
+ "cargo-husky",
+ "chrono",
+ "config",
+ "countme",
+ "everscale-network",
+ "everscale-rpc-server",
+ "futures",
+ "futures-util",
+ "hex",
+ "hyper",
+ "indicatif",
+ "is-terminal",
+ "nekoton-abi",
+ "once_cell",
+ "pomfrit",
+ "prost 0.12.1",
+ "prost-build",
+ "rand",
+ "rustc-hash",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+ "ton-block-compressor",
+ "ton-indexer",
+ "ton_abi",
+ "ton_block",
+ "ton_block_json",
+ "ton_types",
+ "tracing",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "futures"
 version = "0.3.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3365,53 +3412,6 @@ name = "vcpkg"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
-
-[[package]]
-name = "fusion-producer"
-version = "0.0.1"
-dependencies = [
- "anyhow",
- "archive-downloader",
- "argh",
- "async-trait",
- "base64",
- "broxus-util",
- "bytes",
- "bytesize",
- "cargo-husky",
- "chrono",
- "config",
- "countme",
- "everscale-network",
- "everscale-rpc-server",
- "futures",
- "futures-util",
- "hex",
- "hyper",
- "indicatif",
- "is-terminal",
- "nekoton-abi",
- "once_cell",
- "pomfrit",
- "prost 0.12.1",
- "prost-build",
- "rand",
- "rustc-hash",
- "serde",
- "serde_json",
- "serde_yaml",
- "thiserror",
- "tokio",
- "tokio-stream",
- "ton-block-compressor",
- "ton-indexer",
- "ton_abi",
- "ton_block",
- "ton_block_json",
- "ton_types",
- "tracing",
- "tracing-subscriber",
-]
 
 [[package]]
 name = "version_check"

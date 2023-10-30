@@ -8,7 +8,7 @@ use ton_block::{CommonMsgInfo, Serializable, MsgAddressIntOrNone};
 
 mod bindings {
     // Generated protobuf bindings
-    include!(concat!(env!("OUT_DIR"), "/venom_data_producer.rs"));
+    include!(concat!(env!("OUT_DIR"), "/data_producer.rs"));
 }
 
 impl From<MessageType> for bindings::MessageType {
