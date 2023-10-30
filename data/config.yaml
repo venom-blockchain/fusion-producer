@@ -1,0 +1,61 @@
+rpc_config:
+  # States RPC endpoint
+  listen_address: "0.0.0.0:8081"
+  # generate_stub_keyblock: true
+  # Minimal JRPC API:
+  # type: simple
+  # Or full JRPC API:
+  type: simple
+
+metrics_settings:
+  # Listen address of metrics. Used by the client to gather prometheus metrics.
+  # Default: "127.0.0.1:10000"
+  listen_address: "0.0.0.0:10000"
+  # Metrics update interval in seconds. Default: 10
+  collection_interval_sec: 10
+
+filter_config:
+  message_filters:
+  - type: any_message
+    entries:
+      - name: fallthrough
+        receiver:
+          address: "0:dbb13a10b34192b33827d291cb74a398f25addf804fff13003ad2c0b3a9e405d"
+        messages: []
+
+serializer:
+  kind: Json
+
+transport:
+  kind: Stdio
+
+scan_type:
+  kind: FromNetwork
+  node_config:
+    # Root directory for node DB. Default: "./db"
+    db_path: "/var/db/ton-kafka-producer2"
+
+    # UDP port, used for ADNL node. Default: 30303
+    adnl_port: 30100
+
+    # Path to temporary ADNL keys.
+    # NOTE: Will be generated if it was not there.
+    # Default: "./adnl-keys.json"
+    temp_keys_path: "/etc/ton-kafka-producer2/adnl-keys.json"
+
+    # Archives map queue. Default: 16
+    parallel_archive_downloads: 32
+
+    # # Specific block from which to run the indexer
+    # start_from: 12365000
+
+    # Manual rocksdb memory options (will be computed from the
+    # available memory otherwise).
+    db_options:
+      rocksdb_lru_capacity: "512 MB"
+      cells_cache_size: "4 GB"
+
+    #persistent_state_options:
+    #  prepare_persistent_states: true
+    #  persistent_state_parallelism: 1
+    #  remove_old_states: true

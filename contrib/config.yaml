@@ -1,0 +1,93 @@
+rpc_config:
+  # States RPC endpoint
+  listen_address: "0.0.0.0:8081"
+  generate_stub_keyblock: true
+  # Minimal JRPC API:
+  type: simple
+  # # Or full JRPC API:
+  # type: full
+  # persistent_db_path: "/var/db/jrpc-storage"
+  # # Virtual shards depth to use during shard state accounts processing
+  # shard_split_depth: 4
+  # # Specify options to enable the transactions GC (disabled by default)
+  # transactions_gc_options:
+  #   # For at least how long to store transactions (in seconds)
+  #   ttl_sec: 1209600
+  #   # GC invocation interval (in seconds)
+  #   interval_sec: 3600
+
+metrics_settings:
+  # Listen address of metrics. Used by the client to gather prometheus metrics.
+  # Default: "127.0.0.1:10000"
+  listen_address: "0.0.0.0:10000"
+  # Metrics update interval in seconds. Default: 10
+  collection_interval_sec: 10
+
+scan_type:
+  kind: FromNetwork
+  node_config:
+    # Root directory for node DB. Default: "./db"
+    db_path: "/var/db/venom-data-producer"
+
+    # UDP port, used for ADNL node. Default: 30303
+    adnl_port: 30000
+
+    # Path to temporary ADNL keys.
+    # NOTE: Will be generated if it was not there.
+    # Default: "./adnl-keys.json"
+    temp_keys_path: "/etc/venom-data-producer/adnl-keys.json"
+
+    # Archives map queue. Default: 16
+    parallel_archive_downloads: 32
+
+    # # Specific block from which to run the indexer
+    # start_from: 12365000
+
+    # Manual rocksdb memory options (will be computed from the
+    # available memory otherwise).
+    # db_options:
+    #   rocksdb_lru_capacity: "512 MB"
+    #   cells_cache_size: "4 GB"
+
+    # Everscale specific network settings
+    adnl_options:
+      use_loopback_for_neighbours: true
+      force_use_priority_channels: true
+    rldp_options:
+      force_compression: true
+    overlay_shard_options:
+      force_compression: true
+
+serializer:
+  kind: Protobuf
+
+transport:
+  kind: Http2
+  capacity: 1024
+  listen_address: 127.0.0.1:10002
+
+filter_config:
+  message_filters:
+  - type: native_transfer
+    entries:
+      - name: Venom transfer
+        # sender: 
+        #   address: 0:...
+        # receiver:
+        #   address: 0:...
+        messages: []
+  - type:
+      contract:
+        name: TokenWallet
+        abi_path: ./test/abi/TokenWallet.abi.json
+    entries:
+    - name: TIP-3 transfer
+      messages:
+      - name: acceptTransfer
+        type: internal
+  - type: any_message
+    entries:
+      - name: fallthrough
+        # receiver:
+        #   code_hash: ...
+        messages: []

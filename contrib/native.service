@@ -1,0 +1,16 @@
+[Unit]
+Description=venom-data-producer
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=yes
+WorkingDirectory=/etc/venom-data-producer
+ExecReload=kill -HUP $MAINPID
+ExecStart=/usr/local/bin/venom-data-producer \
+    --config /etc/venom-data-producer/config.yaml \
+    --global-config /etc/venom-data-producer/ton-global.config.json
+
+[Install]
+WantedBy=multi-user.target
