@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# venom-data-producer
+# fusion-producer
 
 The indexing infrastructure for TVM-compatible blockchains includes a node
 available via [jRPC](https://github.com/broxus/everscale-jrpc) and indexer
@@ -43,11 +43,11 @@ It provides three different methods of scanning blockchain data:
    ```bash
    ./scripts/setup.sh
    ```
-2. Edit `/etc/venom-data-producer/config.yaml`
+2. Edit `/etc/fusion-producer/config.yaml`
 3. Enable and start the service:
    ```bash
-   systemctl enable venom-data-producer
-   systemctl start venom-data-producer
+   systemctl enable fusion-producer
+   systemctl start fusion-producer
    ```
 
 ### Config example
@@ -93,7 +93,7 @@ scan_type:
   kind: FromNetwork
   node_config:
     # Root directory for node DB. Default: "./db"
-    db_path: "/var/db/venom-data-producer"
+    db_path: "/var/db/fusion-producer"
 
     # UDP port, used for ADNL node. Default: 30303
     adnl_port: 30000
@@ -101,7 +101,7 @@ scan_type:
     # Path to temporary ADNL keys.
     # NOTE: Will be generated if it was not there.
     # Default: "./adnl-keys.json"
-    temp_keys_path: "/etc/venom-data-producer/adnl-keys.json"
+    temp_keys_path: "/etc/fusion-producer/adnl-keys.json"
 
     # Archives map queue. Default: 16
     parallel_archive_downloads: 32

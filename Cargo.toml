@@ -1,5 +1,5 @@
 [package]
-name = "venom-data-producer"
+name = "fusion-producer"
 version = "0.0.1"
 edition = "2021"
 rust-version = "1.68.2"
@@ -77,8 +77,8 @@ prost-build = { version = "0.12.1", optional = true }
 [package.metadata.deb]
 depends = "libstdc++6[amd64]"
 section = "utility"
-assets = [["target/release/venom-data-producer", "/usr/local/bin/venom-data-producer", "755"]]
-conf-files = ["/etc/venom-data-producer/"]
+assets = [["target/release/fusion-producer", "/usr/local/bin/fusion-producer", "755"]]
+conf-files = ["/etc/fusion-producer/"]
 maintainer-scripts = "contrib/"
 
 [package.metadata.deb.systemd-units]

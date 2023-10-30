@@ -20,6 +20,6 @@ RUN apt-get update &&  apt-get install -y --no-install-recommends    openssl ca-
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/
-COPY --from=builder app/target/release/venom-data-producer /usr/local/bin/venom-data-producer
-RUN chmod +x /usr/local/bin/venom-data-producer
-ENTRYPOINT ["venom-data-producer"]
+COPY --from=builder app/target/release/fusion-producer /usr/local/bin/fusion-producer
+RUN chmod +x /usr/local/bin/fusion-producer
+ENTRYPOINT ["fusion-producer"]

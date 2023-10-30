@@ -27,7 +27,7 @@ scan_type:
   kind: FromNetwork
   node_config:
     # Root directory for node DB. Default: "./db"
-    db_path: "/var/db/venom-data-producer"
+    db_path: "/var/db/fusion-producer"
 
     # UDP port, used for ADNL node. Default: 30303
     adnl_port: 30000
@@ -35,7 +35,7 @@ scan_type:
     # Path to temporary ADNL keys.
     # NOTE: Will be generated if it was not there.
     # Default: "./adnl-keys.json"
-    temp_keys_path: "/etc/venom-data-producer/adnl-keys.json"
+    temp_keys_path: "/etc/fusion-producer/adnl-keys.json"
 
     # Archives map queue. Default: 16
     parallel_archive_downloads: 32

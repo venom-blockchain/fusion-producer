@@ -4,7 +4,7 @@ set -eE
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
 REPO_DIR=$(cd "${SCRIPT_DIR}/../" && pwd -P)
 
-SERVICE_NAME="venom-data-producer"
+SERVICE_NAME="fusion-producer"
 
 function print_help() {
   echo 'Usage: setup.sh'
