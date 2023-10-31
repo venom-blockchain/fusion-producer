@@ -9,8 +9,8 @@ use is_terminal::IsTerminal;
 use pomfrit::formatter::*;
 use tracing_subscriber::EnvFilter;
 
-use data_producer::filter::init_parsers;
-use data_producer::{
+use fusion_producer::filter::init_parsers;
+use fusion_producer::{
     blocks_handler::BlocksHandler,
     config::*,
     data_scanner::{

@@ -32,10 +32,10 @@ It provides three different methods of scanning blockchain data:
 
 ### Runtime requirements
 
-- CPU: 4 cores, 2 GHz
-- RAM: 8 GB
-- Storage: 100 GB fast SSD
-- Network: 100 MBit/s
+- CPU: 8 cores
+- RAM: 32 GB
+- Storage: 720 GB fast SSD
+- Network: 1 GBit/s
 
 ### How to run
 
