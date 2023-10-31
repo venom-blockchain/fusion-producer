@@ -1,6 +1,7 @@
 <p align="center">
   <a href="https://github.com/venom-blockchain/developer-program">
-    <img src="https://raw.githubusercontent.com/venom-blockchain/developer-program/main/vf-dev-program.png" alt="Logo" width="366.8" height="146.4">
+    <img src="https://raw.githubusercontent.com/venom-blockchain/fusion-producer/e1f5d7cf4b3f579cf3a2e0e9cf22017d7b2d697d/logo.svg" alt="Fusion Producer Logo" width="366.8" height="146.4">
+    <img src="https://raw.githubusercontent.com/venom-blockchain/developer-program/main/vf-dev-program.png" alt="Venom Developer Programm" width="366.8" height="146.4">
   </a>
 </p>
 
